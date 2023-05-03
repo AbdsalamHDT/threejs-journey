@@ -1,5 +1,6 @@
-import Clicker from "./Clicker.jsx";
 import { useState } from 'react';
+import Clicker from "./Clicker.jsx";
+import People from "./People.jsx";
 
 export default function App({ clickersCount, children }) {
 
@@ -22,6 +23,7 @@ export default function App({ clickersCount, children }) {
         <div>Total count: { count }</div>
 
         <button onClick={ toggleClickerClick }>{ hasClicker ? 'Hide' : 'Show' }</button>
+
         { hasClicker && <>
             { [...Array(clickersCount)].map((value, index) => 
                 <Clicker 
@@ -33,5 +35,7 @@ export default function App({ clickersCount, children }) {
             ) }
             {/* <Clicker increment={ increment } keyName="countA" colorName="orange" /> */}
         </> }
+
+        <People />
     </>
 }
